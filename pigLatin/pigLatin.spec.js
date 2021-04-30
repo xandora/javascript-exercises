@@ -1,4 +1,4 @@
-const expect = require("expect");
+const pigLatin = require('./pigLatin')
 
 //  Topics
 
@@ -17,27 +17,21 @@ const expect = require("expect");
 
 // See https://en.wikipedia.org/wiki/Pig_Latin for more details.
 
-const pigLatin = require("./pigLatin.js");
-
 describe('translate', () => {
 	test('translates a word beginning with a vowel', () => {
-		s = pigLatin.translate("apple");
-		expect(s).toBe('appleay');
+		expect(pigLatin.translate("apple")).toBe('appleay');
 	});
 
 	test.skip('translates a word beginning with a consonant', () => {
-		s = pigLatin.translate("banana");
-		expect(s).toBe("ananabay");
+		expect(pigLatin.translate("banana")).toBe("ananabay");
 	});
 
 	test.skip('translates a word beginning with two consonants', () => {
-		s = pigLatin.translate("cherry");
-		expect(s).toBe('errychay');
+		expect(pigLatin.translate("cherry")).toBe('errychay');
 	});
 
 	test.skip('translates two words', () => {
-		s = pigLatin.translate("eat pie");
-		expect(s).toBe('eatay iepay');
+		expect(pigLatin.translate("eat pie")).toBe('eatay iepay');
 	});
 
 	test.skip('translates a word beginning with three consonants', () => {
@@ -45,22 +39,18 @@ describe('translate', () => {
 	});
 
 	test.skip('counts "sch" as a single phoneme', () => {
-		s = pigLatin.translate("school");
-		expect(s).toBe("oolschay");
+		expect(pigLatin.translate("school")).toBe("oolschay");
 	});
 
 	test.skip('counts "qu" as a single phoneme', () => {
-		s = pigLatin.translate("quiet");
-		expect(s).toBe("ietquay");
+		expect(pigLatin.translate("quiet")).toBe("ietquay");
 	});
 
 	test.skip('counts "qu" as a consonant even when its preceded by a consonant', () => {
-		s = pigLatin.translate("square");
-		expect(s).toBe("aresquay");
+		expect(pigLatin.translate("square")).toBe("aresquay");
 	});
 
 	test.skip('translates many words', () => {
-		s = pigLatin.translate("the quick brown fox");
-		expect(s).toBe("ethay ickquay ownbray oxfay");
+		expect(pigLatin.translate("the quick brown fox")).toBe("ethay ickquay ownbray oxfay");
 	});
 });
